@@ -1,8 +1,15 @@
-import React from "react";
+"use client";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 
 type Props = {};
 
 const Heros = (props: Props) => {
+  const router = useRouter();
+  const HandleClick = () => {
+    router.push("/model");
+  };
+
   return (
     <div
       className="hero min-h-screen"
@@ -14,13 +21,17 @@ const Heros = (props: Props) => {
       <div className="hero-overlay"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md ">
-          <h1 className="mb-5 text-5xl font-bold ">Hello there</h1>
+          <h1 className="mb-5 text-5xl text-amber-100 font-bold ">
+            Anticheat AI
+          </h1>
           <p className="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            Tired of Cheater in Your Game ? the machine Learning model i build
+            can detect suspicious player just upload it and give the name of the
+            player
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <button onClick={HandleClick} className="btn btn-primary">
+            Expose the Cheater
+          </button>
         </div>
       </div>
     </div>
