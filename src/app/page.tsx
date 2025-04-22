@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Heros from "./components/Heros";
+import Model from "./components/Model";
 
 export default function Home() {
   return (
@@ -7,6 +8,9 @@ export default function Home() {
       <main className="">
         <div className="">
           <Heros />
+        </div>
+        <div className="" id="model">
+          <Model />
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">

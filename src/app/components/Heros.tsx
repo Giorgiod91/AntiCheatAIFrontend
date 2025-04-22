@@ -7,7 +7,7 @@ type Props = {};
 const Heros = (props: Props) => {
   const router = useRouter();
   const HandleClick = () => {
-    router.push("/model");
+    router.push("#model");
   };
 
   return (
