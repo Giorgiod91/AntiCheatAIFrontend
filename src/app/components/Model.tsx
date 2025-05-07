@@ -9,6 +9,7 @@ function Model({}: Props) {
   const [suspectName, setSuspectName] = useState("");
   const fetchMyModelBackend = async () => {
     const url = "https//:localhost8080/predict";
+    let playerName = suspectName;
     try {
       const response = await fetch(url);
       if (response.ok) {
@@ -44,7 +45,7 @@ function Model({}: Props) {
         <div className="border border-r-2 w-[260px] h-[350px]">
           {" "}
           <h2>your suspect</h2>
-          <input value={(e) => setSuspectName(suspectName)} type="text" />
+          <input onChange={(e) => setSuspectName(e.target.value)} type="text" />
         </div>
       </div>
     </div>
