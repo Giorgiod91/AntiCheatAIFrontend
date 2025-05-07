@@ -1,8 +1,12 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 
 type Props = {};
 
 function Model({}: Props) {
+  // creating fetch and also state for the input name the models needs to predict on the given name
+  const [suspectName, setSuspectName] = useState("");
   const fetchMyModelBackend = async () => {
     const url = "https//:localhost8080/predict";
     try {
@@ -18,7 +22,8 @@ function Model({}: Props) {
       return null;
     }
   };
-
+  //::TODO: showcase the model in action on the right or left div ! so user can se that something is working in the background and the other
+  // div is to live compare to a pro player aim
   return (
     <div className="h-screen flex flex-col items-center">
       <h1 className="text-5xl  font-bold">
@@ -30,9 +35,17 @@ function Model({}: Props) {
         the model is trained on the aim of the best players in the world and
         will compare reaction time with your suspect
       </p>
+
       <div className="flex flex-row gap-2">
-        <div className="border border-r-2 w-[260px] h-[350px]"></div>
-        <div className="border border-r-2 w-[260px] h-[350px]"></div>
+        <div className="border border-r-2 w-[260px] h-[350px]">
+          {" "}
+          <h2>pro player</h2>
+        </div>
+        <div className="border border-r-2 w-[260px] h-[350px]">
+          {" "}
+          <h2>your suspect</h2>
+          <input value={(e) => setSuspectName(suspectName)} type="text" />
+        </div>
       </div>
     </div>
   );
