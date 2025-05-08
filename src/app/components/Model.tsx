@@ -7,6 +7,8 @@ type Props = {};
 function Model({}: Props) {
   // creating fetch and also state for the input name the models needs to predict on the given name
   const [suspectName, setSuspectName] = useState("");
+  // loading state for my animation
+  const [loading, setLoading] = useState(false);
   const fetchMyModelBackend = async () => {
     const url = "https//:localhost8080/predict";
     let playerName = suspectName;
@@ -45,7 +47,11 @@ function Model({}: Props) {
         <div className="border border-r-2 w-[260px] h-[350px]">
           {" "}
           <h2>your suspect</h2>
-          <input onChange={(e) => setSuspectName(e.target.value)} type="text" />
+          <input
+            value={suspectName}
+            onChange={(e) => setSuspectName(e.target.value)}
+            type="text"
+          />
         </div>
       </div>
     </div>
