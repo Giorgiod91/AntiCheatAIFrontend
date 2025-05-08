@@ -95,8 +95,8 @@ const container: React.CSSProperties = {
 };
 
 const box: React.CSSProperties = {
-  width: 180,
-  height: 180,
+  width: 280,
+  height: 280,
   backgroundColor: "#0cdcf7",
   borderRadius: "10px",
 };
